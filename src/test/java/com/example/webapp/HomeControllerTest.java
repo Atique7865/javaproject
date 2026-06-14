@@ -23,13 +23,13 @@ class HomeControllerTest {
     void homePageRenders() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Simple Java Web App")));
+                .andExpect(content().string(containsString("Japan in Bloom")));
     }
 
     @Test
     void messageApiReturnsJson() throws Exception {
         mockMvc.perform(get("/api/message"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.text").value("Hello from Java and Spring Boot!"));
+                .andExpect(jsonPath("$.text").value("Japan in Bloom shares travel stories about the beauty of Japan."));
     }
 }
